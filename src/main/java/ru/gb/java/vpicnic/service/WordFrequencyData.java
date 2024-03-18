@@ -5,13 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WordFrequencyData implements WordFrequency {
-    private ArrayList<String> foodArrayList = new ArrayList<>();
-
     @Override
     public void wordFrequency(ArrayList<String> list) {
-        foodArrayList = list;
         Map<String, Integer> basket = new HashMap<>();
-        for (String word : foodArrayList) {
+        for (String word : list) {
             word = word.toLowerCase();
             basket.put(word, basket.getOrDefault(word, 0) + 1);
         }
